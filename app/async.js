@@ -8,6 +8,11 @@ exports.asyncAnswers = {
   },
 
   manipulateRemoteData: function(url) {
-
+    return new Promise(function(resolve, reject) {
+      $.ajax(url).done(data => {
+        const list = data.people.map(person => person.name).sort();
+        resolve(list);
+      });
+    });
   }
 };
