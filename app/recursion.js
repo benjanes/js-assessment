@@ -27,7 +27,6 @@ exports.recursionAnswers = {
       for (let i = 0; i < remainder.length; i++) {
         var val = remainder.shift();
         permutate(chunk.concat([val]), remainder);
-        console.log(chunk);
         remainder.push(val);
       }
     })([], arr.slice());
